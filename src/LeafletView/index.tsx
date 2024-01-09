@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { WebView } from 'react-native-webview';
-import { readAsStringAsync } from 'expo-file-system';
-import { useAssets } from 'expo-asset';
+// import { readAsStringAsync } from 'expo-file-system';
+// import { useAssets } from 'expo-asset';
 import {
   MapMarker,
   WebviewLeafletMessage,
@@ -19,21 +19,23 @@ import {
   WebViewMessageEvent,
 } from 'react-native-webview/lib/WebViewTypes';
 import LoadingIndicator from '../LoadingIndicator';
+import leafletHTML from '../../android/src/main/assets/leaflet.js';
 
 const LEAFLET_HTML_SOURCE = () => {
-  const [index] = useAssets(
-    require('../../../android/src/main/assets/leaflet.html')
-  );
+  // const [index] = useAssets(
+  //   require('../../../android/src/main/assets/leaflet.html')
+  // );
 
-  const [html, setHtml] = useState('');
+  // const [html, setHtml] = useState('');
 
-  if (index) {
-    readAsStringAsync(index[0].localUri as string).then((data) => {
-      setHtml(data);
-    });
-  }
+  // if (index) {
+  //   readAsStringAsync(index[0].localUri as string).then((data) => {
+  //     setHtml(data);
+  //   });
+  // }
 
-  return html;
+  // return html;
+  return leafletHTML;
 };
 
 const DEFAULT_MAP_LAYERS = [
