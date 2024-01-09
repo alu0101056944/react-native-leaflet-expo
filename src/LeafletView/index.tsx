@@ -22,7 +22,7 @@ import LoadingIndicator from '../LoadingIndicator';
 
 const LEAFLET_HTML_SOURCE = () => {
   const [index] = useAssets(
-    require('../../android/src/main/assets/leaflet.html')
+    require('../../../android/src/main/assets/leaflet.html')
   );
 
   const [html, setHtml] = useState('');
